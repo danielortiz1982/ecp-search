@@ -14,9 +14,7 @@ import { FormsModule }   from '@angular/forms'
     usersEndpoint: string = 'https://jsonplaceholder.typicode.com/users'
 
     getUsers(){
-      this.http.get<any>(this.usersEndpoint).subscribe( users => {
-        users.forEach( el => this.ecpResults.push(el) )
-      })
+      this.http.get<any>(this.usersEndpoint).subscribe( users => users.forEach( el => this.ecpResults.push(el) ) )
     }
 
     constructor(private http: HttpClient){}
